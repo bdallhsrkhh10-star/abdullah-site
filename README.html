@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Ultimate Design | عبدالله محمد صرخه</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI}
+body{
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;overflow-x:hidden;
+}
+
+/* شاشة البداية */
+#splash{
+position:fixed;inset:0;
+background:black;
+display:flex;flex-direction:column;
+justify-content:center;align-items:center;
+z-index:9999;font-size:30px;
+animation:fadeOut 2s forwards 2s;
+}
+@keyframes fadeOut{to{opacity:0;visibility:hidden}}
+
+/* الهيدر */
+header{
+display:flex;justify-content:space-between;
+padding:20px 40px;
+background:rgba(0,0,0,.5);
+backdrop-filter:blur(10px);
+}
+header h1{color:gold}
+nav button{
+background:none;border:1px solid gold;
+color:gold;padding:8px 18px;
+border-radius:25px;margin-left:8px;
+cursor:pointer;transition:.3s;
+}
+nav button:hover{background:gold;color:black}
+
+/* الصفحات */
+section{display:none;padding:60px 30px;animation:fade .6s}
+section.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(20px)}}
+
+/* الصفحة الرئيسية */
+.hero{text-align:center;margin-top:80px}
+.hero h2{font-size:44px;color:gold}
+.hero p{margin-top:15px;font-size:18px}
+.hero button{
+margin-top:30px;padding:14px 30px;
+font-size:18px;border:none;
+background:gold;border-radius:30px;
+cursor:pointer;transition:.3s;
+}
+.hero button:hover{transform:scale(1.08)}
+
+/* كروت */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;margin-top:40px;
+}
+.card{
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,215,0,.5);
+padding:25px;border-radius:22px;
+transition:.4s;
+}
+.card:hover{
+transform:translateY(-12px) scale(1.03);
+background:rgba(255,255,255,.15);
+}
+.card h3{color:gold;margin-bottom:10px}
+.card button{
+margin-top:15px;
+padding:8px 18px;
+border-radius:20px;
+border:1px solid gold;
+background:none;
+color:gold;
+cursor:pointer;
+}
+.card button:hover{background:gold;color:black}
+
+/* الخدمات المتقدمة */
+.features{
+margin-top:50px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+.feature{
+background:rgba(0,0,0,.4);
+padding:20px;
+border-radius:18px;
+border-left:4px solid gold;
+}
+
+/* لعبة */
+#gameBox{
+width:100%;height:280px;
+background:#111;border-radius:20px;
+margin-top:30px;position:relative;
+overflow:hidden;
+}
+.enemy{
+width:45px;height:45px;
+background:red;border-radius:50%;
+position:absolute;cursor:pointer;
+}
+
+/* تواصل */
+input,textarea{
+width:100%;padding:12px;
+border-radius:12px;border:none;
+margin-top:10px;
+}
+.contact button{
+margin-top:15px;width:100%;
+padding:12px;background:gold;
+border:none;border-radius:20px;
+font-size:16px;cursor:pointer;
+}
+
+/* الفوتر */
+footer{text-align:center;padding:20px;opacity:.7}
+</style>
+</head>
+
+<body>
+
+<div id="splash">
+<h1>🎮 تصميم</h1>
+<h2>عبدالله محمد صرخه</h2>
+</div>
+
+<header>
+<h1>✨ Abdullah Ultimate</h1>
+<nav>
+<button onclick="show('home')">الرئيسية</button>
+<button onclick="show('about')">من نحن</button>
+<button onclick="show('services')">الخدمات</button>
+<button onclick="show('game')">اللعبة</button>
+<button onclick="show('contact')">تواصل</button>
+</nav>
+</header>
+
+<section id="home" class="active">
+<div class="hero">
+<h2>تصميم يصل لأقصى حد</h2>
+<p>موقع فاخر • واجهة ذكية • تجربة راقية</p>
+<button onclick="show('services')">استعرض الخدمات</button>
+</div>
+</section>
+
+<section id="about">
+<h2 style="color:gold">من نحن</h2>
+<p style="margin-top:15px">
+موقع احترافي من تصميم  
+<b>عبدالله محمد صرخه</b><br>
+يعرض أقصى قدرات HTML + CSS + JavaScript
+</p>
+</section>
+
+<section id="services">
+<h2 style="color:gold">💎 خدماتنا الفاخرة</h2>
+
+<div class="cards">
+<div class="card">
+<h3>🎨 تصميم واجهات</h3>
+<p>تصاميم عصرية فخمة متوافقة مع الجوال</p>
+<button>عرض التفاصيل</button>
+</div>
+
+<div class="card">
+<h3>💻 مواقع ويب</h3>
+<p>مواقع سريعة، خفيفة، بدون تعقيد</p>
+<button>نماذج أعمال</button>
+</div>
+
+<div class="card">
+<h3>🎮 ألعاب ويب</h3>
+<p>ألعاب تفاعلية تعمل بالمتصفح</p>
+<button>تشغيل لعبة</button>
+</div>
+
+<div class="card">
+<h3>📱 تحويل APK</h3>
+<p>تحويل الموقع لتطبيق أندرويد</p>
+<button>طلب الخدمة</button>
+</div>
+</div>
+
+<div class="features">
+<div class="feature">⚡ سرعة تحميل عالية</div>
+<div class="feature">📱 متوافق مع الجوال</div>
+<div class="feature">🎯 تجربة مستخدم ذكية</div>
+<div class="feature">🔐 أمان واستقرار</div>
+<div class="feature">🌍 جاهز للنشر</div>
+<div class="feature">🏆 مناسب لمشاريع التخرج</div>
+</div>
+</section>
+
+<section id="game">
+<h2 style="color:gold">🎯 لعبة تصويب مصغّرة</h2>
+<div id="gameBox">
+<div class="enemy" onclick="hit(this)"></div>
+</div>
+</section>
+
+<section id="contact">
+<h2 style="color:gold">📞 تواصل معنا</h2>
+<div class="contact">
+<input placeholder="اسمك">
+<input placeholder="بريدك">
+<textarea rows="4" placeholder="رسالتك"></textarea>
+<button>إرسال</button>
+</div>
+</section>
+
+<footer>
+© 2026 | تصميم عبدالله محمد صرخه
+</footer>
+
+<script>
+function show(id){
+document.querySelectorAll("section")
+.forEach(s=>s.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+}
+
+/* لعبة */
+const enemy=document.querySelector(".enemy");
+function moveEnemy(){
+enemy.style.left=Math.random()*250+"px";
+enemy.style.top=Math.random()*200+"px";
+}
+function hit(){moveEnemy()}
+moveEnemy();
+</script>
+
+</body>
+</html>
